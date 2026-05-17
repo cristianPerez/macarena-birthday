@@ -18,13 +18,13 @@ export function GuestGreeting({ guestName }: GuestGreetingProps) {
       animate="visible"
       transition={{ duration: 0.5 }}
     >
-      <p className="text-xl font-medium text-[#d66b8f] sm:text-2xl">
+      <p className="text-2xl font-semibold tracking-tight text-[#d66b8f]">
         Hola {guestName}
       </p>
 
       <div className="mx-auto mt-5 max-w-sm px-1">
-        <p className="text-base leading-relaxed text-[#4a403c] sm:text-lg">
-          Celebra con nosotros el primer cumpleaños de
+        <p className="font-semibold leading-snug tracking-tight text-[#3f3a38]">
+          Celebra con nosotros el cumpleaños de
         </p>
         <RansomWord
           text={macarenaName}

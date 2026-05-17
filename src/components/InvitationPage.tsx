@@ -14,14 +14,12 @@ export function InvitationPage() {
           <GuestGreeting guestName={guestName} />
         ) : (
           <header className="px-4 pt-8 text-center">
-            <p className="text-sm font-medium tracking-wide text-[#6b5b55] uppercase">
-              Primer cumpleaños
+            <p className="text-2xl font-semibold tracking-tight text-[#3f3a38]">
+              ¡Fiesta de Maca!
             </p>
-            <h1 className="mt-2 text-3xl font-semibold text-[#3f3a38]">¡Fiesta de Maca!</h1>
-            <p className="mt-2 text-sm text-[#6f6762]">
-              Agrega <code className="rounded bg-white/60 px-1">?guest=Nombre</code> o{' '}
-              <code className="rounded bg-white/60 px-1">?v=1</code> /{' '}
-              <code className="rounded bg-white/60 px-1">?v=2</code> en el enlace
+            <p className="mt-3 text-base font-medium text-[#8a817c]">
+              Agrega <code className="rounded bg-white/60 px-1">?guest=Nombre</code> en el enlace para
+              personalizar
             </p>
           </header>
         )}

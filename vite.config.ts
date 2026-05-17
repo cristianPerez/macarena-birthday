@@ -9,7 +9,7 @@ function absoluteOgImages(): Plugin {
       const siteUrl = process.env.VITE_SITE_URL ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '')
       if (!siteUrl) return html
 
-      return html.replace(/content="\/assets\/og-image\.png"/g, `content="${siteUrl}/assets/og-image.png"`)
+      return html.replace(/content="\/assets\/maca\.png"/g, `content="${siteUrl}/assets/maca.png"`)
     },
   }
 }

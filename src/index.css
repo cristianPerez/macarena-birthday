@@ -8,7 +8,7 @@
   body {
     @apply m-0 min-h-dvh antialiased text-[#3f3a38];
     font-family:
-      'Inter',
+      'Montserrat',
       system-ui,
       -apple-system,
       BlinkMacSystemFont,

@@ -19,29 +19,14 @@ Agrega el parámetro `guest` en la URL:
 http://localhost:5173/?guest=María
 ```
 
-## Versión de la invitación (imagen)
+## Assets
 
-| Parámetro | Imagen |
-|-----------|--------|
-| `?v=1` o `?v=v1` | `invitation.jpg` |
-| `?v=2` o `?v=v2` | `invitation_two.jpg` (por defecto) |
-
-Ejemplos combinados:
-
-```
-http://localhost:5173/?guest=María&v=1
-http://localhost:5173/?guest=Pedro&v=2
-```
-
-## Pendiente por tu parte
-
-1. **Audio:** `public/audio/macarenatwo.m4a` (se reproduce al abrir la página)
-2. **Capas PNG** (opcional, con fondo transparente) en `public/assets/`:
-   `maca.png`, `balloon-1.png`, `disco-ball.png`, `star.png`, `bunting.png`, `lemonade-glass.png`, `cupcake.png`, `bow.png`
+- Invitación: `public/assets/maca.png`
+- Audio: `public/audio/macarenatwo.m4a`
 
 ## Evento (editar en código)
 
-Datos en `src/config/event.ts` — fecha, hora, lugar y enlaces a Maps/Waze.
+Enlaces a Maps/Waze en `src/config/event.ts`.
 
 ## Despliegue en Vercel
 
