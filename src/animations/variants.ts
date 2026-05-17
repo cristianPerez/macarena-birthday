@@ -19,10 +19,10 @@ export const unlockBanner: Variants = {
     transition: { duration: 0.45, ease: 'easeOut' },
   },
   pulsing: {
-    opacity: [0.35, 1, 0.35],
+    opacity: [0.65, 1, 0.65],
     y: 0,
     transition: {
-      opacity: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' },
+      opacity: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
     },
   },
   exit: {
