@@ -5,6 +5,33 @@ export const fadeUp: Variants = {
   visible: { opacity: 1, y: 0 },
 }
 
+export const fadeInOut: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 6 },
+}
+
+export const unlockBanner: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.45, ease: 'easeOut' },
+  },
+  pulsing: {
+    opacity: [0.35, 1, 0.35],
+    y: 0,
+    transition: {
+      opacity: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' },
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 6,
+    transition: { duration: 0.35, ease: 'easeIn' },
+  },
+}
+
 export const float: Variants = {
   animate: {
     y: [0, -10, 0],

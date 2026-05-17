@@ -1,11 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { unlockBanner } from '../animations/variants'
 import { audio } from '../config/assets'
 
 export function AudioToggle() {
+  const reduceMotion = useReducedMotion()
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [isAvailable, setIsAvailable] = useState(true)
+  const [showUnlockBanner, setShowUnlockBanner] = useState(false)
 
   const syncState = useCallback((el: HTMLAudioElement) => {
     setIsPlaying(!el.paused)
@@ -20,6 +24,7 @@ export function AudioToggle() {
 
     try {
       await el.play()
+      setShowUnlockBanner(false)
       syncState(el)
       return true
     } catch {
@@ -42,13 +47,18 @@ export function AudioToggle() {
 
     const autoplay = async () => {
       const ok = await playWithSound()
-      if (ok) return
+      if (ok) {
+        setShowUnlockBanner(false)
+        return
+      }
 
       el.muted = true
       try {
         await el.play()
+        setShowUnlockBanner(true)
         syncState(el)
       } catch {
+        setShowUnlockBanner(true)
         syncState(el)
       }
     }
@@ -85,6 +95,23 @@ export function AudioToggle() {
         autoPlay
         playsInline
       />
+
+      <AnimatePresence>
+        {showUnlockBanner && isAvailable && (
+          <motion.button
+            key="unlock-banner"
+            type="button"
+            onClick={() => void playWithSound()}
+            variants={unlockBanner}
+            initial="hidden"
+            animate={reduceMotion ? 'visible' : ['visible', 'pulsing']}
+            exit="exit"
+            className="fixed bottom-20 left-1/2 z-[60] max-w-[calc(100vw-5rem)] -translate-x-1/2 rounded-full bg-[#d66b8f]/95 px-4 py-2.5 text-sm font-medium text-white shadow-md backdrop-blur-sm transition hover:bg-[#c45a7d]"
+          >
+            Toca para escuchar la canción
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       <button
         type="button"
