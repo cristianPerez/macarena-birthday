@@ -1,0 +1,20 @@
+{
+  "name": "macarena-birthday",
+  "version": "1.0.0",
+  "description": "Birthday landing",
+  "homepage": "https://github.com/cristianPerez/macarena-birthday#readme",
+  "bugs": {
+    "url": "https://github.com/cristianPerez/macarena-birthday/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianPerez/macarena-birthday.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
